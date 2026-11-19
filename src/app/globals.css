@@ -1,0 +1,618 @@
+:root {
+  --ink: #172a35;
+  --muted: #748087;
+  --paper: #f5f4ef;
+  --red: #d94b37;
+  --red-dark: #b83b2b;
+  --line: #e5e3db;
+  --navy: #183541;
+  --cream: #ede8dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Arial", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.topbar {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(24, 53, 65, 0.13);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  color: var(--red);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.brand small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+
+.topbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.topbar-link span,
+.text-link span {
+  color: var(--red);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 0.93fr;
+  align-items: center;
+  gap: 58px;
+  padding: 78px 0 76px;
+}
+
+.eyebrow,
+.section-kicker {
+  color: #78838a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e5a84e;
+  box-shadow: 0 0 0 4px rgba(229, 168, 78, 0.16);
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Arial", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  margin: 25px 0 18px;
+  font-size: clamp(42px, 5vw, 63px);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 1.06;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.intro {
+  max-width: 450px;
+  margin-bottom: 25px;
+  color: #647178;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #c9c9c0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 43px;
+}
+
+.note-star {
+  color: var(--red);
+  font-size: 21px;
+}
+
+.hero-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.hero-note strong {
+  color: var(--ink);
+}
+
+.garage-art {
+  min-height: 388px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 5px;
+  background:
+    linear-gradient(180deg, transparent 70%, rgba(12, 27, 35, 0.52)),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 79px,
+      rgba(220, 232, 223, 0.04) 80px 81px
+    ),
+    #1c3c49;
+  color: #f1eee5;
+}
+
+.garage-photo {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.garage-topline {
+  position: absolute;
+  z-index: 2;
+  top: 26px;
+  right: 27px;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #c4cfca;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.garage-led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e6ab54;
+  box-shadow: 0 0 10px rgba(230, 171, 84, 0.8);
+}
+
+.garage-caption {
+  position: absolute;
+  z-index: 2;
+  right: 28px;
+  bottom: 23px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cad3ce;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.caption-line {
+  width: 20px;
+  height: 2px;
+  background: #e6ab54;
+}
+
+.club-mission {
+  padding: 27px 30px 25px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #efeee8;
+}
+
+.fundraiser-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.fundraiser-heading h2 {
+  margin: 7px 0 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.fundraiser-heading > p {
+  max-width: 290px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.fundraiser-progress {
+  max-width: 700px;
+}
+
+.progress-track {
+  height: 13px;
+  overflow: hidden;
+  border: 1px solid rgba(24, 53, 65, 0.08);
+  border-radius: 999px;
+  background: #deded5;
+}
+
+.progress-fill {
+  height: 100%;
+  min-width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c94332, #ed7651);
+  transition: width 350ms ease;
+}
+
+.progress-details {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 11px;
+  font-size: 12px;
+}
+
+.progress-details strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.progress-details strong span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.progress-details > span {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.progress-remaining {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.support-section {
+  padding: 69px 0 70px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  margin: 9px 0 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.section-heading > p {
+  max-width: 260px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.donation-card {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 27px 31px 21px;
+  border: 1px solid #e8e6de;
+  border-radius: 5px;
+  background: #fbfaf6;
+  box-shadow: 0 18px 50px rgba(24, 53, 65, 0.055);
+}
+
+.donate-button {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--red);
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.donate-button:hover {
+  background: var(--red-dark);
+  transform: translateY(-1px);
+}
+
+.donate-button span {
+  font-size: 15px;
+}
+
+.notice {
+  margin: 12px 0 0;
+  color: #a33c2f;
+  font-size: 11px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.secure-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 14px 0 0;
+  color: #858e8e;
+  font-size: 9px;
+  text-align: center;
+}
+
+.thanks {
+  position: relative;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+  background: var(--cream);
+  text-align: left;
+}
+
+.thanks-icon {
+  color: var(--red);
+  font-size: 26px;
+}
+
+.thanks p {
+  margin: 0;
+  color: #717a76;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.thanks p strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.thanks-doodle {
+  position: absolute;
+  right: 37px;
+  color: rgba(217, 75, 55, 0.45);
+  font-size: 58px;
+  transform: rotate(-15deg);
+}
+
+.footer {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #89908c;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 820px) {
+  .page-shell {
+    width: min(100% - 40px, 600px);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 37px;
+    padding: 61px 0 50px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 9vw, 61px);
+  }
+
+  .hero-note {
+    margin-top: 29px;
+  }
+
+  .garage-art {
+    min-height: 350px;
+  }
+
+  .support-section {
+    padding: 53px 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    width: calc(100% - 32px);
+  }
+
+  .topbar {
+    height: 74px;
+  }
+
+  .brand strong {
+    font-size: 11px;
+  }
+
+  .brand small {
+    font-size: 8px;
+  }
+
+  .topbar-link {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 46px;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    font-size: 9px;
+  }
+
+  h1 {
+    font-size: clamp(37px, 10.1vw, 47px);
+  }
+
+  .intro {
+    font-size: 13px;
+  }
+
+  .garage-art {
+    min-height: 282px;
+  }
+
+  .garage-caption {
+    right: 19px;
+    bottom: 20px;
+    left: 19px;
+    font-size: 8px;
+  }
+
+  .club-mission {
+    padding: 22px 18px;
+  }
+
+  .fundraiser-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 17px;
+  }
+
+  .fundraiser-heading h2 {
+    font-size: 21px;
+  }
+
+  .fundraiser-heading > p {
+    font-size: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .donation-card {
+    padding: 22px 18px 18px;
+  }
+
+  .thanks {
+    justify-content: flex-start;
+    padding: 0 18px;
+  }
+
+  .thanks-doodle {
+    right: 12px;
+    font-size: 42px;
+  }
+
+  .footer {
+    min-height: 73px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -37,13 +37,13 @@ jobs:
       - name: Build static site
         run: |
           if [ -z "$NEXT_PUBLIC_TBANK_FUNDRAISER_URL" ]; then
-            echo "Set the TBANK_FUNDRAISER_URL repository variable in GitHub Actions."
+            echo "Set TBANK_FUNDRAISER_URL in GitHub Actions Variables or Secrets."
             exit 1
           fi
           npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /donation_landing
-          NEXT_PUBLIC_TBANK_FUNDRAISER_URL: ${{ vars.TBANK_FUNDRAISER_URL }}
+          NEXT_PUBLIC_TBANK_FUNDRAISER_URL: ${{ vars.TBANK_FUNDRAISER_URL || secrets.TBANK_FUNDRAISER_URL }}
 
       - name: Keep Next.js assets on GitHub Pages
         run: touch out/.nojekyll

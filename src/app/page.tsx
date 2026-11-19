@@ -110,7 +110,7 @@ export default function Home() {
             <h2 id="fundraiser-title">Полуслики к сезону</h2>
           </div>
           <p>
-            Собираю на комплект полусликов, чтобы подготовить Miata к гонкам.
+            Собираю на комплект полусликов, чтобы подготовить Ромбазду к гонкам.
           </p>
         </div>
         <div className="fundraiser-progress">

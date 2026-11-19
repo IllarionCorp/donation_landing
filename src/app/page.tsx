@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const fundraisingGoal = 75000;
-const fundraisingRaised = 0;
+const fundraisingRaised = 1500;
 const fundraisingProgress = Math.min(
   100,
   Math.round((fundraisingRaised / fundraisingGoal) * 100),
@@ -35,7 +35,9 @@ export default function Home() {
       fundraiserUrl = getTBankFundraiserUrl();
     } catch (error) {
       if (error instanceof TypeError) {
-        setNotice("Проверь ссылку на сбор Т-Банка: нужна корректная HTTPS-ссылка.");
+        setNotice(
+          "Проверь ссылку на сбор Т-Банка: нужна корректная HTTPS-ссылка.",
+        );
         return;
       }
 
@@ -145,23 +147,23 @@ export default function Home() {
         id="support"
         aria-labelledby="support-title"
       >
-      <div className="section-heading">
-        <div>
-          <span className="section-kicker">Сбор организован в Т-Банке</span>
-          <h2 id="support-title">Помочь со сбором на полуслики</h2>
+        <div className="section-heading">
+          <div>
+            <span className="section-kicker">Сбор организован в Т-Банке</span>
+            <h2 id="support-title">Помочь со сбором на полуслики</h2>
+          </div>
+          <p>Открой страницу сбора Т-Банка и выбери сумму там.</p>
         </div>
-        <p>Открой страницу сбора Т-Банка и выбери сумму там.</p>
-      </div>
 
-      <div className="donation-card">
-        <button
-          className="donate-button"
-          type="button"
-          onClick={handleOpenFundraiser}
-        >
-          Открыть сбор в Т-Банке
-          <span aria-hidden="true">↗</span>
-        </button>
+        <div className="donation-card">
+          <button
+            className="donate-button"
+            type="button"
+            onClick={handleOpenFundraiser}
+          >
+            Открыть сбор в Т-Банке
+            <span aria-hidden="true">↗</span>
+          </button>
           {notice && (
             <p className="notice" role="status">
               {notice}
